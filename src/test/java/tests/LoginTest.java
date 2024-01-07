@@ -56,6 +56,26 @@ public class LoginTest extends TestBase {
 
 
     }
+
+
+    @Test
+    public void loginWrongEmail(){
+        app.getHelperUser().openLogin();
+        app.getHelperUser().fillLoginForm("alex@gmail.com", "445566BbNn)(!");
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertEquals(app.getHelperUser().getMessage(), '"' + "Login or Password incorrect" + '"' );
+
+
+
+    }
+    @Test
+    public void loginWrongPassword(){
+        app.getHelperUser().openLogin();
+        app.getHelperUser().fillLoginForm("bondijulia@gmail.com", "44");
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertEquals(app.getHelperUser().getMessage(), '"' + "Login or Password incorrect" + '"');
+
+    }
     @AfterMethod
     public void postConditions() {
         app.getHelperUser().clickOkButton();

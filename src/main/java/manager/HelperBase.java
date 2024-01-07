@@ -36,7 +36,8 @@ public class HelperBase {
        // String text = element.getText();
        // return text;
         pause(2000);
-        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+        return
+        wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
     }
 
     public void pause(int time){

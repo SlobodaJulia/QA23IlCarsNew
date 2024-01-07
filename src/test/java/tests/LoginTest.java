@@ -1,4 +1,5 @@
 package tests;
+import models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +16,22 @@ public class LoginTest extends TestBase {
         }
     }
 
+    @Test
+    public void loginSuccess1() {
+        User user= new User().withEmail("bondijulia@gmail.com").withPassword("445566BbNn)(!");
+        //user.setEmail("bondijulia@gmail.com");
+        //user.setPassword("445566BbNn)(!");
+
+        app.getHelperUser().openLogin();
+        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().YallaButtonSubmit();
+
+        //Assert.assertTrue(app.getHelperUser().isLogged());
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+
+
+
+    }
     @Test
     public void loginSuccess() {
         app.getHelperUser().openLogin();
@@ -39,8 +56,10 @@ public class LoginTest extends TestBase {
 
 
     }
-    AfterMethod
-    public void postCondition(){
+    @AfterMethod
+    public void postConditions() {
         app.getHelperUser().clickOkButton();
+
     }
+
 }

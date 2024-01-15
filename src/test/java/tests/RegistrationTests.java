@@ -37,6 +37,85 @@ public class RegistrationTests extends TestBase {
 
     }
 
+    @Test
+    //button submit does not active
+    public void registrationEmptyName(){
+        User user = new User()
+                .withFirstName("")
+                .withLastName("Snow")
+                .withEmail("snow@gmail.com")
+                .withPassword("Ssnow9876542$");
+
+
+        app.getHelperUser().openRegistrationForm();
+        app.getHelperUser().fillRegistrationForm(user);
+        app.getHelperUser().checkPolicyXY();
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+        Assert.assertEquals(app.getHelperUser().getErrorText(), "Name is required");
+    }
+
+    @Test
+    //message appears  last name required
+    //yalla button is not active
+    public void registrationEmptyLastName(){
+
+        User user = new User()
+                .withFirstName("Lara")
+                .withLastName("")
+                .withEmail("snow@gmail.com")
+                .withPassword("Ssnow9876542$");
+
+
+        app.getHelperUser().openRegistrationForm();
+        app.getHelperUser().fillRegistrationForm(user);
+        app.getHelperUser().checkPolicyXY();
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+        Assert.assertEquals(app.getHelperUser().getErrorText(), "Last name is required");
+
+    }
+
+    @Test
+    //yalla button is disabled
+    //message appears wrong email format
+    public void registrationWrongEmail(){
+        User user = new User()
+                .withFirstName("Lara")
+                .withLastName("Snow")
+                .withEmail("snow@gmailcom")
+                .withPassword("Ssnow9876542$");
+
+
+        app.getHelperUser().openRegistrationForm();
+        app.getHelperUser().fillRegistrationForm(user);
+        app.getHelperUser().checkPolicyXY();
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+        Assert.assertEquals(app.getHelperUser().getErrorText(), "Wrong email format");
+    }
+
+    @Test
+
+    //message appears password wrong
+    public void registrationWrongPassword(){
+        User user = new User()
+                .withFirstName("Lara")
+                .withLastName("Snow")
+                .withEmail("snow@gmail.com")
+                .withPassword("fsnow9876542$");
+
+
+        app.getHelperUser().openRegistrationForm();
+        app.getHelperUser().fillRegistrationForm(user);
+        app.getHelperUser().checkPolicyXY();
+        app.getHelperUser().YallaButtonSubmit();
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+        Assert.assertEquals(app.getHelperUser().getErrorText(), "Password must contain 1 uppercase letter, 1 lowercase letter, 1 number and one special symbol of [@$#^&*!]");
+
+    }
+
+
 
     @AfterMethod
     public void postConditions() {

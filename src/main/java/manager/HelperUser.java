@@ -4,40 +4,40 @@ import org.openqa.selenium.*;
 
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
-public class HelperUser extends HelperBase{
+public class HelperUser extends HelperBase {
     public HelperUser(WebDriver wd) {
         super(wd);
     }
 
-    public void openLogin(){
+    public void openLogin() {
         click(By.xpath("//a[text()=' Log in ']"));
     }
-    public void fillLoginForm(String email, String password){
 
-        type(By.id("email"),email);
-        type(By.id("password"),password);
-        //input[@id='password']
-    }
-    public void fillLoginForm(User user){
+    public void fillLoginForm(String email, String password) {
 
-        type(By.id("email"),user.getEmail());
-        type(By.id("password"),user.getPassword());
+        type(By.id("email"), email);
+        type(By.id("password"), password);
         //input[@id='password']
     }
 
+    public void fillLoginForm(User user) {
 
-    public void YallaButtonSubmit(){
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+        //input[@id='password']
+    }
+
+
+    public void YallaButtonSubmit() {
         click(By.xpath("//button[@type='submit']"));
     }
 
 
-
-     public boolean isLogged() {
+    public boolean isLogged() {
         return isElementPresent(By.xpath("//*[.=' Logout ']"));
     }
-
-
 
 
     public void logout() {
@@ -45,7 +45,7 @@ public class HelperUser extends HelperBase{
     }
 
     public void clickOkButton() {
-        if(isElementPresent(By.xpath("//button[text()='Ok']")))
+        if (isElementPresent(By.xpath("//button[text()='Ok']")))
             click(By.xpath("//button[text()='Ok']"));
 
     }
@@ -53,6 +53,7 @@ public class HelperUser extends HelperBase{
     public String getErrorText() {
         return wd.findElement(By.cssSelector("div.error")).getText();
     }
+
     public boolean isYallaButtonNotActive() {
         boolean res = isElementPresent(By.cssSelector("button[disabled]"));
         WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
@@ -65,10 +66,10 @@ public class HelperUser extends HelperBase{
     }
 
     public void fillRegistrationForm(User user) {
-        type(By.id("name"),user.getFirstName());
-        type(By.id("lastName"),user.getLastName());
-        type(By.id("email"),user.getEmail());
-        type(By.id("password"),user.getPassword());
+        type(By.id("name"), user.getFirstName());
+        type(By.id("lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
     }
 
     public void checkPolicy() {
@@ -78,6 +79,21 @@ public class HelperUser extends HelperBase{
         //variant 2
         JavascriptExecutor js = (JavascriptExecutor) wd;
         js.executeScript("document.querySelector('#terms-of-use').click()");
+    }
+
+    public void checkPolicyXY() {
+        if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+
+            Dimension size = wd.manage().window().getSize();
+            System.out.println("Wigh screen--> " + size.getWidth());
+
+            WebElement label = wd.findElement(By.cssSelector("label[for ='terms-of-use']"));
+            Rectangle rect = label.getRect();
+            int w = rect.getWidth();
+            int xOffSet = -w / 2;
+            Actions actions = new Actions(wd);
+            actions.moveToElement(label, xOffSet, 0).click().release().perform();
+        }
     }
 }
 

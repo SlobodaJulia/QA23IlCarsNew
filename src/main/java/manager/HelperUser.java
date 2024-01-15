@@ -95,6 +95,14 @@ public class HelperUser extends HelperBase {
             actions.moveToElement(label, xOffSet, 0).click().release().perform();
         }
     }
+
+    public void login(User user) {
+       openLogin();
+        fillLoginForm(user);
+        YallaButtonSubmit();
+        clickOkButton();
+
+    }
 }
 
 

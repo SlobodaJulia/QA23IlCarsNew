@@ -32,7 +32,7 @@ public class RegistrationTests extends TestBase {
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicy();
-        app.getHelperUser().YallaButtonSubmit();
+        app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getMessage(), "You are logged in success");
 
     }
@@ -50,7 +50,7 @@ public class RegistrationTests extends TestBase {
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();
-        app.getHelperUser().YallaButtonSubmit();
+        app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
         Assert.assertEquals(app.getHelperUser().getErrorText(), "Name is required");
     }
@@ -70,7 +70,7 @@ public class RegistrationTests extends TestBase {
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();
-        app.getHelperUser().YallaButtonSubmit();
+        app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
         Assert.assertEquals(app.getHelperUser().getErrorText(), "Last name is required");
 
@@ -90,7 +90,7 @@ public class RegistrationTests extends TestBase {
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();
-        app.getHelperUser().YallaButtonSubmit();
+        app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
         Assert.assertEquals(app.getHelperUser().getErrorText(), "Wrong email format");
     }
@@ -109,7 +109,7 @@ public class RegistrationTests extends TestBase {
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();
-        app.getHelperUser().YallaButtonSubmit();
+        app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
         Assert.assertEquals(app.getHelperUser().getErrorText(), "Password must contain 1 uppercase letter, 1 lowercase letter, 1 number and one special symbol of [@$#^&*!]");
 

@@ -16,7 +16,7 @@ public class ApplicationManager {
         wd = new ChromeDriver();
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        wd.navigate().to("https://ilcarro.web.app/");
+        wd.navigate().to("http://ilcarro.web.app/");
         helperUser = new HelperUser(wd);
         helperCar = new HelperCar(wd);
     }

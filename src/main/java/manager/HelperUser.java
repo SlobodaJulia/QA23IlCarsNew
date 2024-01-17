@@ -11,15 +11,14 @@ public class HelperUser extends HelperBase {
         super(wd);
     }
 
-    public void openLogin() {
+
+    public void openLoginForm() {
         click(By.xpath("//a[text()=' Log in ']"));
     }
 
     public void fillLoginForm(String email, String password) {
-
         type(By.id("email"), email);
         type(By.id("password"), password);
-        //input[@id='password']
     }
 
     public void fillLoginForm(User user) {
@@ -29,14 +28,9 @@ public class HelperUser extends HelperBase {
         //input[@id='password']
     }
 
-
-    public void YallaButtonSubmit() {
-        click(By.xpath("//button[@type='submit']"));
-    }
-
-
     public boolean isLogged() {
-        return isElementPresent(By.xpath("//*[.=' Logout ']"));
+        return
+                isElementPresent(By.xpath("//*[.=' Logout ']"));
     }
 
 
@@ -45,7 +39,7 @@ public class HelperUser extends HelperBase {
     }
 
     public void clickOkButton() {
-        if (isElementPresent(By.xpath("//button[text()='Ok']")))
+        if(isElementPresent(By.xpath("//button[text()='Ok']")))
             click(By.xpath("//button[text()='Ok']"));
 
     }
@@ -81,7 +75,7 @@ public class HelperUser extends HelperBase {
         js.executeScript("document.querySelector('#terms-of-use').click()");
     }
 
-    public void checkPolicyXY() {
+   /* public void checkPolicyXY() {
         if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
 
             Dimension size = wd.manage().window().getSize();
@@ -94,15 +88,30 @@ public class HelperUser extends HelperBase {
             Actions actions = new Actions(wd);
             actions.moveToElement(label, xOffSet, 0).click().release().perform();
         }
-    }
+    }*/
+   public void checkPolicyXY() {
+       if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+           WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+           Rectangle rect = label.getRect();
+           int w = rect.getWidth();
+
+           int xOffSet = -w / 2;
+           Actions actions = new Actions(wd);
+           actions.moveToElement(label, xOffSet, 0).click().release().perform();
+
+           Dimension size = wd.manage().window().getSize();
+           System.out.println("Wight screen --->" + size.getWidth());
+
+       }
+   }
 
     public void login(User user) {
-       openLogin();
+
+        openLoginForm();
         fillLoginForm(user);
-        YallaButtonSubmit();
+        submit();
         clickOkButton();
+        pause(1000);
 
     }
 }
-
-

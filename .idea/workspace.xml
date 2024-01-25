@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a337c3bc-d40b-4192-8e60-89c63a0bd3d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/02-bugatti-cd-nardo-testing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddNewCarTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddNewCarTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,38 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AddNewCarTests.addNewCarSuccess.executor": "Run",
-    "Gradle.AddNewCarTests.addNewCarSuccessAll.executor": "Run",
-    "Gradle.AddNewCarTests.executor": "Run",
-    "Gradle.LoginTest.executor": "Run",
-    "Gradle.LoginTest.loginSuccess.executor": "Run",
-    "Gradle.LoginTest.loginSuccess1.executor": "Run",
-    "Gradle.LoginTest.loginSuccessModel.executor": "Run",
-    "Gradle.LoginTest.loginUnregisteredUser.executor": "Run",
-    "Gradle.LoginTest.loginWrongEmail.executor": "Run",
-    "Gradle.LoginTest.loginWrongPassword.executor": "Run",
-    "Gradle.LoginTest.postConditions.executor": "Run",
-    "Gradle.LoginTests.executor": "Run",
-    "Gradle.RegistrationTests.executor": "Run",
-    "Gradle.RegistrationTests.registrationEmptyLastName.executor": "Run",
-    "Gradle.RegistrationTests.registrationEmptyName.executor": "Run",
-    "Gradle.RegistrationTests.registrationSuccess.executor": "Run",
-    "Gradle.RegistrationTests.registrationWrongEmail.executor": "Run",
-    "Gradle.RegistrationTests.registrationWrongPassword.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/pc/Documents/GitHub/QA23IlCarsNew/src/main/resources",
-    "onboarding.tips.debug.path": "C:/Users/pc/Documents/GitHub/QA23IlCarsNew/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AddNewCarTests.addNewCarSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewCarTests.addNewCarSuccessAll.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewCarTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginSuccess1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginSuccessModel.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginUnregisteredUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginWrongEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.loginWrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTest.postConditions.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationEmptyLastName.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationEmptyName.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationWrongEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationWrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Documents/GitHub/QA23IlCarsNew/src/main/resources&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/pc/Documents/GitHub/QA23IlCarsNew/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pc\Documents\GitHub\QA23IlCarsNew\src\main\resources" />
@@ -109,7 +105,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AddNewCarTests.addNewCarSuccessAll">
+  <component name="RunManager" selected="Gradle.LoginTest.loginSuccess">
     <configuration name="AddNewCarTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,7 +178,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.registrationEmptyName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTest.loginSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,7 +191,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.registrationEmptyName&quot;" />
+            <option value="&quot;tests.LoginTest.loginSuccess&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,7 +202,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTests.registrationWrongEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTest.loginSuccess1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -219,7 +215,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.RegistrationTests.registrationWrongEmail&quot;" />
+            <option value="&quot;tests.LoginTest.loginSuccess1&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -232,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LoginTest.loginSuccess" />
+        <item itemvalue="Gradle.LoginTest.loginSuccess1" />
         <item itemvalue="Gradle.AddNewCarTests.addNewCarSuccessAll" />
         <item itemvalue="Gradle.AddNewCarTests.addNewCarSuccess" />
         <item itemvalue="Gradle.AddNewCarTests" />
-        <item itemvalue="Gradle.RegistrationTests.registrationWrongEmail" />
-        <item itemvalue="Gradle.RegistrationTests.registrationEmptyName" />
       </list>
     </recent_temporary>
   </component>
